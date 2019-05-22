@@ -1,0 +1,103 @@
+
+html, body {
+    margin: 0;
+}
+
+*{
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+
+.header {
+    fill: black;
+    color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.logo{
+    margin-left: 30px;
+}
+.logo img{
+    width: 140px;
+    opacity: 0.8;
+}
+
+
+.body{
+    background-image: url(https://corchaosis.ru/img/GirlHorns/0022.jpg);
+    height: 645px;
+    background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-color:black;
+
+}
+
+.box{
+    position: absolute;
+    top:10px;
+    right:100px;
+    left:400px;
+    font-size: 18px;
+    opacity: 0.9;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.box a{
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 20px;
+    text-decoration: none;
+    color:ghostwhite;
+}
+
+@media only screen and (max-width: 800px) {
+    .logo img {
+        width: 120px;
+    }
+    .body {
+        background-image: url(http://s1.1zoom.me/b5050/659/351048-sepik_1334x750.jpg);
+    }
+    .box{
+        position: absolute;
+
+        right:30px;
+        left:150px;
+
+        font-size: 17px;
+
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap:wrap
+
+    }
+    .box a{
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 20px;
+    }}
+
+@media only screen and (max-width: 581px){
+    .box a{
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    .box{
+        position: absolute;
+        right:30px;
+        left:150px;
+        font-size: 15px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap:wrap}
+}
+
