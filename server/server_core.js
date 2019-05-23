@@ -15,5 +15,17 @@ app.get("/", function (request, response) {
     response.sendFile(`${BUILD_DIRECTORY}/auth.html`);
 
 });
+app.get("/login", function (request, response) {
+
+    // отправляем ответ
+    response.sendFile(`${BUILD_DIRECTORY}/log_in.html`);
+
+});
+app.get("/signup", function (request, response) {
+
+    // отправляем ответ
+    response.sendFile(`${BUILD_DIRECTORY}/sign_up.html`);
+
+});
 // начинаем прослушивать подключения на 3000 порту
 app.listen(3000);
