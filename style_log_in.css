@@ -1,0 +1,66 @@
+html, body
+{
+    background-image: url("http://freshwallpapers.in/walls/creative__graphics_169-HD.jpg");
+}
+
+.register-block
+{
+    padding:50px;
+    margin-top: 100px;
+    -webkit-box-shadow:0 3px 50px 0 rgba(0,0,0,.1);
+    box-shadow:0 3px 50px 0 rgba(0,0,0,.1);
+    text-align:center;
+    border-radius:5px;
+    fill: black;
+    color: white;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+}
+.register-block h1,.register-block h6
+{
+    font-family: 'Ropa Sans', sans-serif;
+    color:#96a2b2;
+    letter-spacing:1px
+}
+.register-block h1
+{
+    font-size:22px;
+    margin-bottom:60px;
+    margin-top:40px
+}
+
+.register-block img
+{
+    width: 180px;
+
+}
+
+.register-block .input-group-addon
+{
+    color:#29aafe;
+    font-size:19px;
+    opacity:.5
+}
+.register-block .btn-block
+{
+    margin-top:30px;
+    padding:15px;
+    border-color:#29aafe;
+}
+.register-block .hr-xs
+{
+    margin-top:5px;
+    margin-bottom:5px
+}
+.register-block .btn
+{
+    background-color: #060a0c;
+    border-color: #060a0c;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.register-block p{
+    margin-top: 30px;
+}
+
