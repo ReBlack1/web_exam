@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9566bed7-6c9e-46c5-95f7-38b8a47fc223" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/client/auth.html" />
-      <change beforePath="$PROJECT_DIR$/auth.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/log_in.html" afterPath="$PROJECT_DIR$/log_in.html" />
-      <change beforePath="$PROJECT_DIR$/sign_up.html" afterPath="$PROJECT_DIR$/sign_up.html" />
-      <change beforePath="$PROJECT_DIR$/styleq.css" afterPath="$PROJECT_DIR$/client/styleq.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/server/server_core.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/tenzor.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/auth.html" afterPath="$PROJECT_DIR$/client/auth.html" />
+      <change beforePath="$PROJECT_DIR$/client/log_in.html" afterPath="$PROJECT_DIR$/client/log_in.html" />
+      <change beforePath="$PROJECT_DIR$/client/sign_up.html" afterPath="$PROJECT_DIR$/client/sign_up.html" />
+      <change beforePath="$PROJECT_DIR$/log_in.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/sign_up.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/style_log_in.css" afterPath="$PROJECT_DIR$/client/style_log_in.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,41 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="log_in.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log_in.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="auth.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/auth.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign_up.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sign_up.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style_log_in.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style_log_in.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="493">
+              <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -111,7 +87,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="255" />
     <option name="y" value="96" />
     <option name="width" value="1128" />
@@ -156,7 +132,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -248,15 +224,15 @@
       <workItem from="1558534743890" duration="135000" />
       <workItem from="1558534890025" duration="16000" />
       <workItem from="1558550434844" duration="117000" />
-      <workItem from="1558601537657" duration="9588000" />
+      <workItem from="1558601537657" duration="9724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41978000" />
+    <option name="totallyTimeSpent" value="42114000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="916" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24968314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -579,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/auth.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        <state relative-caret-position="493">
+          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
