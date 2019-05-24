@@ -8,7 +8,7 @@ const BUILD_DIRECTORY = path.resolve(__dirname, '..', 'client')
 // Настройка статики
 app.use(express.static(BUILD_DIRECTORY));
 
-// определяем обработчик для маршрута "/"
+// определяем обработчики для маршрутов
 app.get("/", function (request, response) {
 
         // отправляем ответ
@@ -27,5 +27,8 @@ app.get("/signup", function (request, response) {
     response.sendFile(`${BUILD_DIRECTORY}/sign_up.html`);
 
 });
+
+
+
 // начинаем прослушивать подключения на 3000 порту
 app.listen(3000);
