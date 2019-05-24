@@ -52,6 +52,7 @@ html, body {
 
 }
 .box a{
+    margin-top: 20px;
     padding-right: 25px;
     padding-left: 25px;
     padding-top: 20px;
