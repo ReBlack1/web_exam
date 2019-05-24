@@ -28,7 +28,17 @@ app.get("/signup", function (request, response) {
 
 });
 
+app.post('/create_acc', (req, res) => {
+    res.send('create_acc')
+});
 
+app.post('/create_char', (req, res) => {
+    res.send('create_char')
+});
+
+app.post('/entrance', (req, res) => {
+    res.send('entrance')
+});
 
 // начинаем прослушивать подключения на 3000 порту
 app.listen(3000);
