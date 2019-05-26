@@ -16,4 +16,7 @@
   },
   "homepage": "https://github.com/ReBlack1/web_exam#readme",
   "description": ""
+  "engines": {
+    "node": "10.x"
+  }
 }
