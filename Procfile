@@ -1,1 +1,1 @@
-web: npm run server_core.js
+web: node server_core.js
