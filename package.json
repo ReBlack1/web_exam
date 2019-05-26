@@ -1,17 +1,35 @@
 {
   "name": "fcd-online",
   "version": "1.0.0",
-  "main": "server_core.js",
+  "main": "server.js",
   "engines": {
     "node": "10.x"
   },
   "scripts": {
     "heroku-postbuild": "npm run build",
-    "server": "node server/server_core.js",
+    "server": "node server/server-core.js",
+    "build": "cd client && npm run build",
+    "dev": "start npm run server && cd client && npm run serve",
+    "query": "node \"server/database/Execute SQL Query.js\"",
+    "bl": "node \"server/database/Execute BL.js\""
   },
   "dependencies": {
-
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-service": "^3.1.1",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "iview": "^3.0.1",
+    "md5": "^2.2.1",
+    "pg": "^7.7.1",
+    "vue": "^2.5.17",
+    "vue-cli-plugin-iview": "^1.0.6",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-service": "^3.1.1",
+    "babel-plugin-import": "^1.8.0",
+    "vue-template-compiler": "^2.5.17"
   },
   "postcss": {
     "plugins": {
