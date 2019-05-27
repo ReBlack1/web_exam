@@ -83,11 +83,11 @@ app.post('/entrance', (req, res) => {
         if (data[0] !== undefined) {
             if (data[0].pwd == pwd) {
                 res.send(good_entrance)
+                return
             }
+
         }
-        else {
-            res.send(bad_entrance)
-        }
+        res.send(bad_entrance)
     });
 });
 
