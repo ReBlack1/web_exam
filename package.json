@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server_core.js",
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "heroku-postbuild": "npm run build",
+    "server": "node server/server-core.js"
+  }
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
