@@ -19,7 +19,9 @@ const acc_is_created = JSON.stringify({ result: "acc is created" });
 app.get('/methods/characterSheet', (req, res) => {
     res.send(JSON.stringify(yes))
 });
-
+app.get('/', (req, res) => {
+    res.send('server is started')
+});
 
 app.post('/create_acc', (req, res) => {
     nickname = req.query['nickname']
