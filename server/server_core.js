@@ -8,13 +8,11 @@ const app = express();
 var port = process.env.PORT || 3000;
 // Прошедшая 
 const yes = JSON.stringify({ result: true });
-const no = {
-    result: false
-};
-const name_is_taken = JSON.stringify({ result: "name is taken" })
-const login_is_taken = JSON.stringify({ result: "login is taken" })
-const email_is_taken = JSON.stringify({ result: "email is taken" })
-const acc_is_created = JSON.stringify({ result: "acc is created" });
+const no = JSON.stringify({ result: false });
+const name_is_taken = JSON.stringify({ status: false, message: "name is taken" })
+const login_is_taken = JSON.stringify({ status: false, message: "login is taken" })
+const email_is_taken = JSON.stringify({ status: false, message: "email is taken" })
+const acc_is_created = JSON.stringify({ status: false, message: "acc is created" });
 
 
 app.get('/methods/characterSheet', (req, res) => {
@@ -40,8 +38,7 @@ app.post('/create_acc', (req, res) => {
             res.send(name_is_taken)
             console.log("Поиск по имени нашел значения")
         }
-        else
-        {
+        else {
             db.get_user(filter2, function (data2) {
                 if (data2[0] !== undefined) {
                     res.send(login_is_taken)
@@ -61,7 +58,7 @@ app.post('/create_acc', (req, res) => {
                 }
             });
         }
-    })    
+    })
 });
 
 app.post('/create_char', (req, res) => {
@@ -69,8 +66,27 @@ app.post('/create_char', (req, res) => {
 });
 
 app.post('/entrance', (req, res) => {
-    res.send('entrance')
+    login_or_mail = req.query['login_or_email']
+    pwd = req.query['pwd']
+    filter = {}
+    if (login_or_mail.indexOf('@') > -1) {
+        filter.email = login_or_mail
+    }
+    else {
+        filter.login = login_or_mail
+    }
+    db.get_user(filter, function (data) {
+        console.log(data)
+        if (data[0] !== undefined) {
+            if (data[0].pwd == pwd) {
+                res.send(yes)
+            }
+        }
+        else {
+            res.send(no)
+        }
+    });
 });
 
-// начинаем прослушивать подключения на 80 порту
+// начинаем прослушивать подключения на 3000/Каком скажут порту
 app.listen(port);
