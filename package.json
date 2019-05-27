@@ -1,8 +1,8 @@
 {
   "name": "web_exam",
   "version": "1.0.0",
-  "description": "website for a exam",
-  "main": "server_core.js",
+  "description": "",
+  "main": "server/server_core.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +18,6 @@
   "homepage": "https://github.com/ReBlack1/web_exam#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.5.11",
-    "path": "^0.12.7"
+    "mongoose": "^5.5.11"
   }
 }
