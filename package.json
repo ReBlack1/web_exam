@@ -9,8 +9,6 @@
   "scripts": {
     "heroku-postbuild": "npm run build",
     "server": "node server/server-core.js"
-  }
-  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
