@@ -12,7 +12,9 @@ const no = JSON.stringify({ result: false });
 const name_is_taken = JSON.stringify({ status: false, message: "name is taken" })
 const login_is_taken = JSON.stringify({ status: false, message: "login is taken" })
 const email_is_taken = JSON.stringify({ status: false, message: "email is taken" })
-const acc_is_created = JSON.stringify({ status: false, message: "acc is created" });
+const acc_is_created = JSON.stringify({ status: true, message: "acc is created" });
+const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
+const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
 
 
 app.get('/methods/characterSheet', (req, res) => {
@@ -69,6 +71,7 @@ app.post('/entrance', (req, res) => {
     login_or_mail = req.query['login_or_email']
     pwd = req.query['pwd']
     filter = {}
+
     if (login_or_mail.indexOf('@') > -1) {
         filter.email = login_or_mail
     }
@@ -79,11 +82,11 @@ app.post('/entrance', (req, res) => {
         console.log(data)
         if (data[0] !== undefined) {
             if (data[0].pwd == pwd) {
-                res.send(yes)
+                res.send(good_entrance)
             }
         }
         else {
-            res.send(no)
+            res.send(bad_entrance)
         }
     });
 });
