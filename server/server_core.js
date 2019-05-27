@@ -5,6 +5,7 @@ const path = require('path');
 const db = require('./database/DB_manager');
 // создаем объект приложения
 const app = express();
+var port = process.env.PORT || 3000;
 // Прошедшая 
 const yes = JSON.stringify({ result: true });
 const no = {
@@ -72,4 +73,4 @@ app.post('/entrance', (req, res) => {
 });
 
 // начинаем прослушивать подключения на 80 порту
-app.listen(443);
+app.listen(port);
