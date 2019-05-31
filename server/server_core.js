@@ -33,7 +33,8 @@ app.get('/', (req, res) => {
     res.send('server is started')
 });
 
-app.post('/create_acc', (req, res) => {
+app.post('/create_acc', (request, res) => {
+    var req = request.body
     nickname = req.query['nickname']
     email = req.query['email']
     login = req.query['login']
@@ -49,7 +50,7 @@ app.post('/create_acc', (req, res) => {
     console.log(email)
     console.log(pwd)
     console.log(req.param.login)
-    console.log(req.body)
+    console.log(req)
     db.get_user(filter1, function (data) {
         console.log("data")
         console.log(data)
