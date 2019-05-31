@@ -12,8 +12,9 @@ const no = JSON.stringify({ result: false });
 const name_is_taken = JSON.stringify({ status: false, message: "name is taken" })
 const login_is_taken = JSON.stringify({ status: false, message: "login is taken" })
 const email_is_taken = JSON.stringify({ status: false, message: "email is taken" })
-const acc_is_created = JSON.stringify({ status: true, message: "acc is created" });
-const char_is_created = JSON.stringify({ status: true, message: "char is created" });
+const acc_is_created = JSON.stringify({ status: true, message: "acc was created" });
+const char_is_created = JSON.stringify({ status: true, message: "char was created" });
+const char_was_updated = JSON.stringify({ status: true, message: "char was updated" });
 
 const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
@@ -71,6 +72,13 @@ app.post('/create_acc', (req, res) => {
 app.post('/create_char_fast', (req, res) => {
     db.add_char_fast(req.query)
     res.send(char_is_created)
+});
+
+app.post('/update_char', (req, res) => {
+    const _id = req.query['_id']
+    delete req.query['_id']
+    db.update_char(_id, req.query, function () { res.send(char_was_updated) })
+    
 });
 
 app.post('/entrance', (req, res) => {

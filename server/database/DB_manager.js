@@ -1,5 +1,6 @@
 ﻿// Подключение БД
 var mongoose = require('mongoose');
+var ObjectId = require('mongodb').ObjectID;
 var Schema = mongoose.Schema;
 var DB_config = require('./DB_config');
 const login = DB_config.get_login();
@@ -250,7 +251,7 @@ module.exports = {
 
     add_char_fast: function (char_object) {
         const new_char = new Char(char_object);
-        new_char.save().then(() => console.log('Пользователь ' + new_char.characterName + ' создан!'));
+        new_char.save().then(() => console.log('Персонаж ' + new_char.characterName + ' создан!'));
     },
     get_user: function (filter, callback) {
         Object.keys(filter).forEach(key => filter[key] == "" || filter[key] == null ? delete obj[key]:'');
@@ -265,6 +266,11 @@ module.exports = {
             if (err) return console.log(err);
             return callback(data);
         })
+    },
+    update_char: function (_id, changing, callback) {
+        Char.update({ "_id": ObjectId(_id) }, { $set: changing }, function (err, result) {
+            return callback();
+        })
+        
     }
-
 };
