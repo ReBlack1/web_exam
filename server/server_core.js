@@ -13,13 +13,18 @@ const name_is_taken = JSON.stringify({ status: false, message: "name is taken" }
 const login_is_taken = JSON.stringify({ status: false, message: "login is taken" })
 const email_is_taken = JSON.stringify({ status: false, message: "email is taken" })
 const acc_is_created = JSON.stringify({ status: true, message: "acc is created" });
+const char_is_created = JSON.stringify({ status: true, message: "char is created" });
+
 const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
 
 
-app.get('/methods/characterSheet', (req, res) => {
-    res.send(JSON.stringify(yes))
+app.get('/char_list', (req, res) => {
+    db.get_char(req.query, function (data) {
+        res.send(data);
+    });
 });
+
 app.get('/', (req, res) => {
     res.send('server is started')
 });
@@ -63,8 +68,9 @@ app.post('/create_acc', (req, res) => {
     })
 });
 
-app.post('/create_char', (req, res) => {
-    res.send('create_char')
+app.post('/create_char_fast', (req, res) => {
+    db.add_char_fast(req.query)
+    res.send(char_is_created)
 });
 
 app.post('/entrance', (req, res) => {

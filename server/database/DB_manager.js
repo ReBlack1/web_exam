@@ -247,6 +247,11 @@ module.exports = {
         const new_user = new User({ nickname: nickname, email: email, login: login, pwd: pwd });
         new_user.save().then(() => console.log('Пользователь ' + nickname + ' создан!'));
     },
+
+    add_char_fast: function (char_object) {
+        const new_char = new Char(char_object);
+        new_char.save().then(() => console.log('Пользователь ' + new_char.characterName + ' создан!'));
+    },
     get_user: function (filter, callback) {
         Object.keys(filter).forEach(key => filter[key] == "" || filter[key] == null ? delete obj[key]:'');
         User.find(filter, function (err, data) {
