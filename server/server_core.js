@@ -42,26 +42,37 @@ app.post('/create_acc', (req, res) => {
     filter2.login = login
     filter3 = {}
     filter3.email = email
+    console.log(nickname)
+    console.log(login)
+    console.log(email)
+    console.log(pwd)
     db.get_user(filter1, function (data) {
+        console.log("data")
+        console.log(data)
         if (data[0] !== undefined) {
             res.send(name_is_taken)
             console.log("Поиск по имени нашел значения")
         }
         else {
             db.get_user(filter2, function (data2) {
+                console.log('data2')
+                console.log(data2)
                 if (data2[0] !== undefined) {
                     res.send(login_is_taken)
                     console.log("Поиск по логину нашел значения")
                 }
                 else {
                     db.get_user(filter3, function (data3) {
+                        console.log('data3')
+                        console.log(data3)
                         if (data3[0] !== undefined) {
                             res.send(email_is_taken)
                             console.log("Поиск по майлу нашел значения")
                         }
                         else {
                             db.add_user(nickname, email, login, pwd)
-                            res.send(yes)
+                            console.log("Аккаунт создан")
+                            res.send(acc_is_created)
                         }
                     });
                 }
