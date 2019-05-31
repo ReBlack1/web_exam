@@ -19,7 +19,7 @@ const char_was_updated = JSON.stringify({ status: true, message: "char was updat
 
 const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
-
+app.use(cors());
 
 app.get('/char_list', (req, res) => {
     db.get_char(req.query, function (data) {
@@ -105,6 +105,6 @@ app.post('/entrance', (req, res) => {
         res.send(bad_entrance)
     });
 });
-app.use(cors())
+
 // начинаем прослушивать подключения на 3000/Каком скажут порту
 app.listen(port);
