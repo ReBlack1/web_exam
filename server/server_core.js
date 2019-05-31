@@ -1,5 +1,6 @@
 ﻿// подключение express
 const express = require("express");
+var bodyParser = require('body-parser');
 var cors = require('cors')
 const path = require('path');
 // подключение бд
@@ -20,6 +21,7 @@ const char_was_updated = JSON.stringify({ status: true, message: "char was updat
 const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
 app.use(cors());
+app.use(bodyParser.json());  
 
 app.get('/char_list', (req, res) => {
     db.get_char(req.query, function (data) {
