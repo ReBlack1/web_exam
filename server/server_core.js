@@ -1,5 +1,6 @@
 ﻿// подключение express
 const express = require("express");
+var cors = require('cors')
 const path = require('path');
 // подключение бд
 const db = require('./database/DB_manager');
@@ -104,6 +105,6 @@ app.post('/entrance', (req, res) => {
         res.send(bad_entrance)
     });
 });
-
+app.use(cors())
 // начинаем прослушивать подключения на 3000/Каком скажут порту
 app.listen(port);
