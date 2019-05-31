@@ -254,6 +254,8 @@ module.exports = {
         new_char.save().then(() => console.log('Персонаж ' + new_char.characterName + ' создан!'));
     },
     get_user: function (filter, callback) {
+        console.log('filter')
+        console.log(filter)
         Object.keys(filter).forEach(key => filter[key] == "" || filter[key] == null ? delete obj[key]:'');
         User.find(filter, function (err, data) {
             if (err) return console.log(err);

@@ -46,6 +46,8 @@ app.post('/create_acc', (req, res) => {
     console.log(login)
     console.log(email)
     console.log(pwd)
+    console.log(req)
+    console.log(req.param.login)
     db.get_user(filter1, function (data) {
         console.log("data")
         console.log(data)
