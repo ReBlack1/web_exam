@@ -21,10 +21,19 @@ const char_was_updated = JSON.stringify({ status: true, message: "char was updat
 const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
 app.use(cors());
-app.use(bodyParser.json());  
+// parse application/json
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(function (req, res, next) {
+    res.setHeader("Content-Type", "application/json");
+    next();
+});
 
 app.get('/char_list', (req, res) => {
-    db.get_char(req.query, function (data) {
+    db.get_char(req.body, function (data) {
         res.send(data);
     });
 });
@@ -33,12 +42,11 @@ app.get('/', (req, res) => {
     res.send('server is started')
 });
 
-app.post('/create_acc', (request, res) => {
-    var req = request.body
-    nickname = req.query['nickname']
-    email = req.query['email']
-    login = req.query['login']
-    pwd = req.query['pwd']
+app.post('/create_acc', (req, res) => {
+    nickname = req.body.nickname
+    email = req.body.email
+    login = req.body.login
+    pwd = req.body.pwd
     filter1 = {}
     filter1.nickname = nickname
     filter2 = {}
@@ -49,8 +57,9 @@ app.post('/create_acc', (request, res) => {
     console.log(login)
     console.log(email)
     console.log(pwd)
-    console.log(req.param.login)
-    console.log(req)
+    console.log(req.body)
+    console.log(req.headers)
+    console.log("........................")
     db.get_user(filter1, function (data) {
         console.log("data")
         console.log(data)
@@ -87,20 +96,21 @@ app.post('/create_acc', (request, res) => {
 });
 
 app.post('/create_char_fast', (req, res) => {
-    db.add_char_fast(req.query)
+    db.add_char_fast(req.body)
     res.send(char_is_created)
 });
 
 app.post('/update_char', (req, res) => {
-    const _id = req.query['_id']
-    delete req.query['_id']
-    db.update_char(_id, req.query, function () { res.send(char_was_updated) })
+    const _id = req.body._id
+    delete req.body._id
+    console.log(req.body)
+    db.update_char(_id, req.body, function () { res.send(char_was_updated) })
     
 });
 
 app.post('/entrance', (req, res) => {
-    login_or_mail = req.query['login_or_email']
-    pwd = req.query['pwd']
+    login_or_mail = req.body.login_or_email
+    pwd = req.body.pwd
     filter = {}
 
     if (login_or_mail.indexOf('@') > -1) {
