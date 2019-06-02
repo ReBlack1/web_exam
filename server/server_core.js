@@ -18,7 +18,6 @@ const acc_is_created = JSON.stringify({ status: true, message: "acc was created"
 const char_is_created = JSON.stringify({ status: true, message: "char was created" });
 const char_was_updated = JSON.stringify({ status: true, message: "char was updated" });
 
-const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm" });
 const bad_entrance = JSON.stringify({ status: false, message: "login or password is incorrect" });
 app.use(cors());
 // parse application/json
@@ -123,6 +122,7 @@ app.post('/entrance', (req, res) => {
         console.log(data)
         if (data[0] !== undefined) {
             if (data[0].pwd == pwd) {
+                const good_entrance = JSON.stringify({ status: true, message: "entrance is confirm", nickname:data[0].nickname });
                 res.send(good_entrance)
                 return
             }
