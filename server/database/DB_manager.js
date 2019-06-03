@@ -45,12 +45,12 @@ const CharSchema = new Schema(
         passiveWisdom: String,
         characterStats:
             {
-                strength: String,
-                dexterity: String,
-                constitution: String,
-                intelligence: String,
-                wisdom: String,
-                charisma: String
+                strength: { value: String, add: String },
+                dexterity: { value: String, add: String },
+                constitution: { value: String, add: String },
+                intelligence: { value: String, add: String },
+                wisdom: { value: String, add: String },
+                charisma: { value: String, add: String }
             },
 
         savingThrows:

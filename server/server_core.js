@@ -97,8 +97,11 @@ app.post('/create_acc', (req, res) => {
 });
 
 app.post('/create_char_fast', (req, res) => {
-
+    console.log("CREATING CHAR")
+    console.log("BODY")
     console.log(req.body)
+    console.log("HEADDERS")
+    console.log(req.headers)
     db.add_char_fast(req.body)
     res.send(char_is_created)
 });
