@@ -250,6 +250,7 @@ module.exports = {
     },
 
     add_char_fast: function (char_object) {
+        console.log(char_object)
         const new_char = new Char(char_object);
         new_char.save().then(() => console.log('Персонаж ' + new_char.characterName + ' создан!'));
     },
@@ -263,8 +264,10 @@ module.exports = {
         })
     },
     get_char: function (filter, callback) {
+
         Object.keys(filter).forEach(key => filter[key] == "" || filter[key] == null ? delete obj[key] : '');
-        Char.find(filter , function (err, data) {
+        console.log(filter)
+        Char.find(filter, function (err, data) {
             if (err) return console.log(err);
             return callback(data);
         })

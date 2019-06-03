@@ -32,6 +32,8 @@ app.use(function (req, res, next) {
 });
 
 app.get('/char_list', (req, res) => {
+    console.log("geting char list: ")
+    console.log(req.body)
     db.get_char(req.body, function (data) {
         res.send(data);
     });
@@ -95,6 +97,8 @@ app.post('/create_acc', (req, res) => {
 });
 
 app.post('/create_char_fast', (req, res) => {
+
+    console.log(req.body)
     db.add_char_fast(req.body)
     res.send(char_is_created)
 });
